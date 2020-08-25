@@ -1,11 +1,12 @@
-import sys
 import time
 import random
-
 from selenium_session import build_driver, load_session, save_session
 
 
 class GenericBot():
+    """
+    A generic class to allow interactive use of selenium with a single session
+    """
 
     def __init__(self, name, home_url):
         self.driver = build_driver(new_session=True)
@@ -27,7 +28,7 @@ class GenericBot():
             return False
 
     def login_function(self) -> bool:
-        """Attempts to login on Instagram. Also store username and password
+        """Attempts to login on the page. Also store username and password
         somewhere. Should be overriden.
 
         Returns:
